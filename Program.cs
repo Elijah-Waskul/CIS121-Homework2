@@ -1,25 +1,27 @@
 ﻿// Written by Elijah Waskul
 // 2/6/2025
-namespace Homework_2_Watchtower
+namespace Homework_2_The_Replicator_of_D_To
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("x: ");
-            int x = Convert.ToInt32(Console.ReadLine());
-            Console.Write("y: ");
-            int y = Convert.ToInt32(Console.ReadLine());
+            int[] original = new int[5];
 
-            if (x < 0 && y > 0) Console.WriteLine("The enemy is to the north west!");
-            if (x == 0 && y > 0) Console.WriteLine("The enemy is to the north!");
-            if (x > 0 && y > 0) Console.WriteLine("The enemy is to the north east!");
-            if (x < 0 && y == 0) Console.WriteLine("The enemy is to the west!");
-            if (x == 0 && y == 0) Console.WriteLine("The enemy is here!");
-            if (x > 0 && y == 0) Console.WriteLine("The enemy is to the east!");
-            if (x < 0 && y < 0) Console.WriteLine("The enemy is to the south west!");
-            if (x == 0 && y < 0) Console.WriteLine("The enemy is to the south!");
-            if (x > 0 && y < 0) Console.WriteLine("The enemy is to the south east!");
+            for (int item = 0; item < 5; item++)
+            {
+                Console.Write("Enter a number: ");
+                int number = Convert.ToInt32(Console.ReadLine());
+                original[item] = number;
+            }
+
+            int[] copy = new int[5];
+
+            for (int index = 0; index < 5; index++)
+                copy[index] = original[index];
+
+            for (int index = 0; index < 5; index++)
+                Console.WriteLine($"{original[index]} and {copy[index]}");
         }
     }
 }
